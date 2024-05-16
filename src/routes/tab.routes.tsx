@@ -1,8 +1,9 @@
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
 import { Home } from '../screens/Home';
-import { Books, House, HouseSimple, MagnifyingGlass, SpotifyLogo } from 'phosphor-react-native';
-import { Text } from 'react-native';
+import { Books, House, MagnifyingGlass, SpotifyLogo } from 'phosphor-react-native';
+import { Search } from '../screens/Search';
+import { StackRoutes } from './stack.routes';
 
 const Tab = createBottomTabNavigator();
 
@@ -10,12 +11,13 @@ export function TabRoutes() {
   return (
     <Tab.Navigator
       screenOptions={{
+        title: '',
         headerTransparent: true,
         headerTintColor: '#fff',
         tabBarActiveTintColor: '#fff',
         tabBarInactiveTintColor: '#aaa',
+        tabBarHideOnKeyboard: true,
         tabBarShowLabel: false,
-        title: '',
         tabBarStyle: {
           backgroundColor: '#111',
           borderColor: '#111',
@@ -24,15 +26,15 @@ export function TabRoutes() {
       }}
     >
       <Tab.Screen
-        name='home'
-        component={Home}
+        name='initial'
+        component={StackRoutes}
         options={{
           tabBarIcon: ({ focused, color }) => <House size={28} color={color} weight={focused ?'fill' : 'regular'} />
         }}
       />
       <Tab.Screen
         name='search'
-        component={Home}
+        component={Search}
         options={{
           tabBarIcon: ({ focused, color }) => <MagnifyingGlass size={28} color={color} weight={focused ?'fill' : 'regular'} />
         }}

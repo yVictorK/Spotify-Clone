@@ -6,7 +6,7 @@ export default function App() {
   return (
     <NavigationContainer>
       <TabRoutes />
-      <StatusBar translucent />
+      <StatusBar backgroundColor='transparent' translucent />
     </NavigationContainer>
   );
 }
