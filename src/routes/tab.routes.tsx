@@ -4,6 +4,7 @@ import { Home } from '../screens/Home';
 import { Books, House, MagnifyingGlass, SpotifyLogo } from 'phosphor-react-native';
 import { Search } from '../screens/Search';
 import { StackRoutes } from './stack.routes';
+import { Header } from '../screens/Settings';
 
 const Tab = createBottomTabNavigator();
 
@@ -17,18 +18,22 @@ export function TabRoutes() {
         tabBarActiveTintColor: '#fff',
         tabBarInactiveTintColor: '#aaa',
         tabBarHideOnKeyboard: true,
-        tabBarShowLabel: false,
         tabBarStyle: {
           backgroundColor: '#111',
           borderColor: '#111',
-          height: 65
+          height: 65,
         },
+        tabBarLabelStyle: {
+          color: '#aaa',
+          marginBottom: 5,
+        }
       }}
     >
       <Tab.Screen
         name='initial'
         component={StackRoutes}
         options={{
+          tabBarLabel: 'Início',
           tabBarIcon: ({ focused, color }) => <House size={28} color={color} weight={focused ?'fill' : 'regular'} />
         }}
       />
@@ -36,6 +41,7 @@ export function TabRoutes() {
         name='search'
         component={Search}
         options={{
+          tabBarLabel: 'Buscar',
           tabBarIcon: ({ focused, color }) => <MagnifyingGlass size={28} color={color} weight={focused ?'fill' : 'regular'} />
         }}
       />
@@ -43,6 +49,7 @@ export function TabRoutes() {
         name='library'
         component={Home}
         options={{
+          tabBarLabel: 'Sua Biblioteca',
           tabBarIcon: ({ focused, color }) => <Books size={28} color={color} weight={focused ?'fill' : 'regular'} />
         }}
       />
@@ -50,6 +57,7 @@ export function TabRoutes() {
         name='premium'
         component={Home}
         options={{
+          tabBarLabel: 'Premium',
           tabBarIcon: ({ focused, color }) => <SpotifyLogo size={28} color={color} weight={focused ?'fill' : 'regular'} />
         }}
       />

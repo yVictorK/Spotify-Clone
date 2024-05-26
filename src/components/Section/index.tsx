@@ -2,8 +2,8 @@ import { FlatList, Image, StyleSheet, Text, TouchableOpacity, View } from 'react
 
 type ItemProps = {
   banner?: string;
-  name: string;
-  artist: string;
+  name?: string;
+  artist?: string;
 }
 
 type Props = {
@@ -16,14 +16,14 @@ export const SectionItem = ({ banner, name, artist }: ItemProps) => {
     <TouchableOpacity activeOpacity={0.6} style={styles.itemContainer}>
       <Image
         style={styles.banner}
-        source={{ uri: banner ?? 'https://github.com/m4rcusml.png' }}
+        source={{ uri: banner ?? 'https://lh3.googleusercontent.com/a-/ALV-UjX5BYtNP50SMpBIAu6oTi7TxBFZqOwztqrnff_sWoiWB8nq5kqp=s32-c' }}
       />
       <View>
         <Text style={[styles.text, { fontWeight: 600 }]} numberOfLines={2}>
-          {name}
+          {name?? 'Artista'}
         </Text>
         <Text style={[styles.text, styles.songDetails, { fontSize: 12 }]} numberOfLines={1}>
-          {artist}
+          {artist?? 'Playlist'}
         </Text>
       </View>
     </TouchableOpacity>

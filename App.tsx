@@ -6,7 +6,7 @@ export default function App() {
   return (
     <NavigationContainer>
       <TabRoutes />
-      <StatusBar backgroundColor='transparent' translucent />
+      <StatusBar  style='inverted' backgroundColor='#232323' />
     </NavigationContainer>
   );
 }

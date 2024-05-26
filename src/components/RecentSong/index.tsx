@@ -10,7 +10,7 @@ export function RecentSong({ banner, name }: Props) {
     <TouchableOpacity activeOpacity={0.6} style={styles.container}>
       <Image
         style={styles.banner}
-        source={{ uri: banner ?? 'https://github.com/m4rcusml.png' }}
+        source={{ uri: banner ?? 'https://lh3.googleusercontent.com/a-/ALV-UjX5BYtNP50SMpBIAu6oTi7TxBFZqOwztqrnff_sWoiWB8nq5kqp=s32-c' }}
       />
       <Text style={styles.name} numberOfLines={2}>
         {name ?? 'Músicas Curtidas'}

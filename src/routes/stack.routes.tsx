@@ -1,6 +1,7 @@
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { Search } from '../screens/Search';
 import { Home } from '../screens/Home';
+import { Settings } from '../screens/Settings';
 
 export type StackRoutesType = {
   home: undefined;
@@ -19,7 +20,7 @@ export function StackRoutes() {
       />
       <Stack.Screen
         name='settings'
-        component={Search}
+        component={Settings}
       />
       <Stack.Screen
         name='profile'
