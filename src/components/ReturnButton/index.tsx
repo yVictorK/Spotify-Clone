@@ -6,7 +6,7 @@ export function ButtonReturn() {
     const navigation = useNavigation();
     const string = '<';
     return (
-        <TouchableOpacity onPress={() => navigation.goBack()} style={{ width: 60, height: 60, backgroundColor: '#232323'}} >
+        <TouchableOpacity onPress={() => navigation.goBack()} style={{ width: 60, height: 60}} >
             <Text style={{ fontSize: 40, color: 'white', textAlign: 'center', textAlignVertical: 'center' }} >{string}</Text>
         </TouchableOpacity>
     );

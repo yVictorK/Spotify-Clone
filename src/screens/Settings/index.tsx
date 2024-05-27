@@ -5,7 +5,7 @@ import { StackRoutesType } from '../../routes/stack.routes';
 import { ButtonReturn } from '../../components/ReturnButton';
 import { AlignRightSimple } from 'phosphor-react-native';
 
-interface Opcao{
+interface Opcao {
 	name: string;
 }
 
@@ -24,8 +24,6 @@ const opcoes = [
 
 export const Header = () => {
 
-	const { navigate } = useNavigation<NavigationProp<StackRoutesType>>();
-
 	const { top } = useSafeAreaInsets();
 
 	const paddingTop = top + 10;
@@ -41,7 +39,7 @@ export const Header = () => {
 
 const RenderList = () => {
 	const RightRow = '>';
-	const renderItem = ({ item}: {item: Opcao }) => (
+	const renderItem = ({ item }: { item: Opcao }) => (
 		<View style={styles.itemContainer}>
 			<Text style={styles.textOpcoes}>{item.name}</Text>
 			<Text style={{ color: '#b1b1b1', fontSize: 26, textAlign: 'center', textAlignVertical: 'center' }}>{RightRow}</Text>
@@ -50,7 +48,7 @@ const RenderList = () => {
 
 	return (
 		<FlatList
-		ListHeaderComponent={<ProfileCard />}
+			ListHeaderComponent={<ProfileCard />}
 			data={opcoes}
 			renderItem={renderItem}
 			keyExtractor={item => item.name}
@@ -59,9 +57,12 @@ const RenderList = () => {
 };
 
 const ProfileCard = () => {
+
 	const RightRow = '>';
+	const { navigate } = useNavigation<NavigationProp<StackRoutesType>>();
+
 	return (
-		<TouchableOpacity style={styles.profileContainer}>
+		<TouchableOpacity style={styles.profileContainer} onPress={() => navigate('profile')}>
 			<View style={styles.userData}>
 				<Image
 					width={60}
@@ -125,14 +126,14 @@ const styles = StyleSheet.create({
 		alignItems: 'center',
 	},
 	itemContainer: {
-    flexDirection: 'row',
-    paddingHorizontal: 20,
+		flexDirection: 'row',
+		paddingHorizontal: 20,
 		paddingVertical: 16,
-    justifyContent: 'space-between',
-    alignItems: 'center',
-  },
-  textOpcoes: {
-    fontSize: 16,
+		justifyContent: 'space-between',
+		alignItems: 'center',
+	},
+	textOpcoes: {
+		fontSize: 16,
 		color: '#b1b1b1',
-  }
+	}
 });
